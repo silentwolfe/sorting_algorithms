@@ -25,13 +25,14 @@ void ints_swap(int *a, int *b)
 
 void bubble_sort(int *array, size_t size)
 {
+	size_t i, j;
 
 	if (size < 2 || array == NULL)
 		return;
 
-	for (size_t i = 0; i < size - 1; i++)
+	for (i = 0; i < size - 1; i++)
 	{
-		for (size_t j = 0; j < size - i - 1; j++)
+		for (j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
