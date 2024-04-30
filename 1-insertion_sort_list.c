@@ -12,7 +12,7 @@ void node_swap(listint_t **head, listint_t **node1, listint_t *node2)
 
 	if (node2->next != NULL)
 	{
-		node2->nextprev = *node1;
+		node2->next->prev = *node1;
 	}
 
 	node2->prev = (*node1)->prev;
@@ -47,7 +47,7 @@ void insertion_sort_list(listint_t **list)
 		insertion = iterate->prev;
 		while (insertion != NULL && iterate->n < insertion->n)
 		{
-			node_swap(list, &insert, iterate);
+			node_swap(list, &insertion, iterate);
 			print_list((const listint_t *)*list);
 		}
 	}
